@@ -8,10 +8,10 @@ node{
         sh 'mvn clean package'
     }
 
-   stage ('Running'){
-      echo 'RUnning the container Application'
-   sh 'docker run -itd -p 8081:8080 --name insureme  macintosh2023/insureme:2.0'
-   }
+  // stage ('Running'){
+    //  echo 'RUnning the container Application'
+   //sh 'docker run -itd -p 8081:8080 --name insureme  macintosh2023/insureme:2.0'
+   //}
 
     //stage ('Push docker image to dockerhub') {
         //echo 'pushing images to recovery'
