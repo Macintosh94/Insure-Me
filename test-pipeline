@@ -1,0 +1,18 @@
+node {
+    
+    stage ('code checkout'){
+        git 'https://github.com/Macintosh94/Insure-Me-Test.git'
+    }
+    
+    stage ('build code'){
+        sh 'mvn clean compile assembly:single'
+    }
+    
+    stage ('run test package'){
+        sh 'java -jar target/InsureMe-0.0.1-SNAPSHOT-jar-with-dependencies.jar'
+    }
+
+    stage ('public rep'){
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, includes: 'artifact.png', keepAll: false, reportDir: '/var/lib/jenkins/workspace/test-pipeline', reportFiles: 'index1.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+    }
+}
