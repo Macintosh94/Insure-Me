@@ -3,10 +3,10 @@ node{
         echo 'checking out code from github'
         git 'https://github.com/Macintosh94/Insure-Me.git'
         }
-          stage ('Running the container'){
-          echo 'RUnning the container Application'
-          sh 'docker run -itd -p 8081:8080 --name insureme  macintosh2023/insureme:2.0'
-         }
+          //stage ('Running the container'){
+          //echo 'RUnning the container Application'
+         // sh 'docker run -itd -p 8081:8080 --name insureme  macintosh2023/insureme:2.0'
+         //}
          
          stage ('configure docker server and deploy insure me'){
         echo 'configuring docker server'
