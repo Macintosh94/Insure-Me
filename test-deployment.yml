@@ -1,6 +1,6 @@
 ---
 - name : Configure Docker on EC2 Instances
-  hosts : app-server
+  hosts : test-server
   become : true
   tasks : 
   - name : updating apt
