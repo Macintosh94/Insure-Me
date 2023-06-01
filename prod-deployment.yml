@@ -1,0 +1,22 @@
+---
+- name : Configure Docker on EC2 Instances
+  hosts : prod-server
+  become : true
+  tasks : 
+  - name : updating apt
+    command : sudo apt update
+
+  - name : install docker
+    command : sudo apt install -y docker.io
+
+  - name : run Docker service 
+    command : sudo systemctl start docker
+
+  - name : Stop container
+    command : sudo docker stop insureme
+
+  - name : remove container
+    command : sudo docker rm insureme 
+
+  - name : to deploy docker container
+    command : sudo docker run -itd -p 8081:8080 --name insureme  macintosh2023/insureme:2.0
